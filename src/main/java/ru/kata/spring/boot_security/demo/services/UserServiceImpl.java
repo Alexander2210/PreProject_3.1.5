@@ -60,6 +60,7 @@ public class UserServiceImpl implements UserService {
         Optional<User> user = Optional.ofNullable(userDAO.findByUsername(username));
 
         if (user.isPresent()){
+            System.out.println("пользователь найден");
             return user.get();
         }else{
             throw new UsernameNotFoundException(String.format("User %s not found", username));

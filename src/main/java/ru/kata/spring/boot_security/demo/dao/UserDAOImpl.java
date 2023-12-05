@@ -42,7 +42,7 @@ public class UserDAOImpl implements UserDAO {
     }
     public User findByUsername(String username) {
 
-        return (User) entityManager.createNativeQuery(" Select * from user u where u.username =:username ", User.class)
+        return (User) entityManager.createNativeQuery(" Select * from users u where u.username =:username ", User.class)
                 .setParameter("username", username)
                 .getSingleResult();
     }
