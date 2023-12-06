@@ -10,7 +10,7 @@
 </form>
 <div align="center">
     <h2>New User</h2>
-    <form method="POST" th:action="@{/new}" th:object="${user}">
+    <form method="POST" th:action="@{/admin/new}" th:object="${user}">
         <fieldset style="width: 300px;">
             <p>
                 <label th:for="firstName">Name: </label>
@@ -23,6 +23,23 @@
             <p>
                 <label th:for="email">Email: </label>
                 <input type="text" name="email" th:id="email" th:value="${user.getEmail()}">
+            </p>
+            <p>
+                <label th:for="username">Username: </label>
+                <input type="text" name="username" th:id="username" th:value="${user.getUsername()}">
+            </p>
+            <p>
+                <label th:for="password">Password: </label>
+                <input type="text" name="password" th:id="password" th:value="${user.getPassword()}">
+            </p>
+            <p>
+                <label>Roles:
+                    <select class = "field" multiple name="role" id="role">
+                        <option th:each="roles : ${roles}"  th:value="${roles.getId()}" th:text="${roles.getName()}"
+                                th:selected="${user.getRole().contains(roles)}">
+                        </option>
+                    </select>
+                </label>
             </p>
         </fieldset>
         <button type="submit">Save</button>

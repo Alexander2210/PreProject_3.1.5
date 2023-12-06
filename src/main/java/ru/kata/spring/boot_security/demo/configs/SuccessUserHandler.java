@@ -22,7 +22,6 @@ public class SuccessUserHandler implements AuthenticationSuccessHandler {
             httpServletResponse.sendRedirect("/user");
         } else {
             httpServletResponse.sendRedirect("/");
-            System.out.println("роль не найдена");
         }
     }
 }
