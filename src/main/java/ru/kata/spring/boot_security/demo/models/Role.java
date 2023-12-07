@@ -10,7 +10,7 @@ import java.util.Set;
 public class Role implements GrantedAuthority {
 
     @Id
-    private long id;
+    private Long id;
     private String name;
     @Transient
     @ManyToMany(fetch = FetchType.LAZY, mappedBy = "roles")
@@ -19,11 +19,11 @@ public class Role implements GrantedAuthority {
     public Role() {
     }
 
-    public Role(long id) {
+    public Role(Long id) {
         this.id = id;
     }
 
-    public Role(int id, String name) {
+    public Role(Long id, String name) {
         this.id = id;
         this.name = name;
     }
@@ -32,7 +32,7 @@ public class Role implements GrantedAuthority {
         return id;
     }
 
-    public void setId(int id) {
+    public void setId(Long id) {
         this.id = id;
     }
 

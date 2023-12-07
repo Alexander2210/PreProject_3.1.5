@@ -8,7 +8,7 @@
 <form th:action="@{/appLogout}" method="POST">
   <input type="submit" value="Logout"/>
 </form>
-<h1> Hello i'm adminpage</h1>
+<h1> Hello I'm AdminPage</h1>
 <div align="center">
   <h2>Users table</h2>
   <h3><a href="/user">Enter your userpage</a></h3>
@@ -33,8 +33,8 @@
       <td th:utext="${u.password}"></td>
       <td th:utext="${u.role}"></td>
       <td>
-        <a th:href="'/admin/edit?id='+${u.id}">Edit</a>
-        <a th:href="'/admin/delete?id='+${u.id}">Delete</a>
+        <a th:href="@{/admin/{id}/edit(id=${u.getId()})}">Edit</a>
+        <a th:href="@{/admin/delete/{id}(id=${u.getId()})}">Delete</a>
       </td>
     </tr>
   </table>

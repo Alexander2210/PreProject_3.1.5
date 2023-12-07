@@ -5,7 +5,7 @@ import org.springframework.security.core.userdetails.UserDetails;
 
 import javax.persistence.*;
 import java.util.Collection;
-import java.util.Objects;
+import java.util.HashSet;
 import java.util.Set;
 
 @Entity
@@ -31,12 +31,12 @@ public class User implements UserDetails {
             joinColumns = @JoinColumn(name = "users_id", nullable = false, updatable = false),
             inverseJoinColumns = @JoinColumn(name = "roles_id", nullable = false, updatable = false)
     )
-    private Set<Role> roles;
+    private Set<Role> roles= new HashSet<>();;
 
     public User() {
     }
 
-    public User(long id) {
+    public User(Long id) {
         this.id = id;
     }
 
@@ -50,7 +50,7 @@ public class User implements UserDetails {
         return id;
     }
 
-    public void setId(long id) {
+    public void setId(Long id) {
         this.id = id;
     }
 
@@ -98,7 +98,7 @@ public class User implements UserDetails {
         return roles;
     }
 
-    public void setRole(Set<Role> role) {
+    public void setRole(Set<Role> roles) {
         this.roles = roles;
     }
 
@@ -124,6 +124,6 @@ public class User implements UserDetails {
 
     @Override
     public Collection<? extends GrantedAuthority> getAuthorities() {
-        return getRole();
+        return this.getRole();
     }
 }
