@@ -1,7 +1,7 @@
 INSERT INTO spring_security.users (name, surname, email, username, password)
 VALUES
     ('Alexey', 'Vatin', 'vatalex@mail.ru', 'vatin', '$2a$12$cFQ1xnSjVjOWki2C8FkBN.PUeQwOtHV57/.oNCeIS8BF.jJwFYM66'),
-    ('Dmitriy', 'Ivanov', 'vatalex@mail.ru', 'ivanov', '$2a$12$cFQ1xnSjVjOWki2C8FkBN.PUeQwOtHV57/.oNCeIS8BF.jJwFYM66'),
+    ('Dmitriy', 'Ivanov', 'divanov@yandex.ru', 'ivanov', '$2a$12$cFQ1xnSjVjOWki2C8FkBN.PUeQwOtHV57/.oNCeIS8BF.jJwFYM66'),
     ('Ivan', 'Sokolov', 'ivsokol@gmail.com', 'sokolov', '$2a$12$cFQ1xnSjVjOWki2C8FkBN.PUeQwOtHV57/.oNCeIS8BF.jJwFYM66'),
     ('Maria', 'Bunina', 'buninamar@mail.ru', 'bunina', '$$2a$12$cFQ1xnSjVjOWki2C8FkBN.PUeQwOtHV57/.oNCeIS8BF.jJwFYM66');
 
