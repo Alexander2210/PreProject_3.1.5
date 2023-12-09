@@ -31,7 +31,7 @@ public class Init {
         Role userRole = new Role(2L, "ROLE_USER");
         roleService.addRole(adminRole);
         roleService.addRole(userRole);
-        Set<Role> adminRoleSet = Stream.of(adminRole).collect(Collectors.toSet());
+        Set<Role> adminRoleSet = Stream.of(adminRole, userRole).collect(Collectors.toSet());
         Set<Role> userRoleSet = Stream.of(userRole).collect(Collectors.toSet());
         User user1 = new User("Alexey", "Vatin", "vatalex@mail.ru", "vatin",
                 "123", adminRoleSet);
