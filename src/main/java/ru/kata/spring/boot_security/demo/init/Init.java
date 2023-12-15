@@ -33,10 +33,10 @@ public class Init {
         roleService.addRole(userRole);
         Set<Role> adminRoleSet = Stream.of(adminRole, userRole).collect(Collectors.toSet());
         Set<Role> userRoleSet = Stream.of(userRole).collect(Collectors.toSet());
-        User user1 = new User("Alexey", "Vatin", "vatalex@mail.ru", "vatin",
-                "123", adminRoleSet);
-        User user2 = new User("Dmitriy", "Ivanov", "divanov@yandex.ru", "ivanov",
-                "123", userRoleSet);
+        User user1 = new User("Alexey", "Vatin", "vatalex@mail.ru", "admin",
+                "admin", adminRoleSet);
+        User user2 = new User("Dmitriy", "Ivanov", "divanov@yandex.ru", "user",
+                "user", userRoleSet);
         userService.addUser(user1);
         userService.addUser(user2);
     }
