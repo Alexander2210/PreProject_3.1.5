@@ -25,7 +25,7 @@ public class User implements UserDetails {
 
     private String password;
 
-    //Для аннотаций @OneToMany и @ManyToMany  параметр fetch по умолчанию устанавливается LAZY
+    //Для аннотаций @OneToMany и @ManyToMany параметр fetch по умолчанию устанавливается LAZY
     @ManyToMany
     @JoinTable(name = "users_roles",
             joinColumns = @JoinColumn(name = "users_id"),
