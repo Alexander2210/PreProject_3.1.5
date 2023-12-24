@@ -53,7 +53,12 @@ public class UserServiceImpl implements UserService {
 
     @Override
     public User findUser(Long id) {
-        return this.userRepository.getById(id);
+        User user = null;
+        Optional<User> optional = this.userRepository.findById(id);
+        if(optional.isPresent()) {
+            user = optional.get();
+        }
+        return user;
     }
 
     @Override

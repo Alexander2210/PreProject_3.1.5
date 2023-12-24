@@ -13,5 +13,4 @@ public interface UserRepository extends JpaRepository<User, Long> {
     User findByUsername(String username);
     @Query("SELECT DISTINCT u FROM User u LEFT JOIN FETCH u.roles")
     List<User> findAllUniqueUsers();
-
 }
